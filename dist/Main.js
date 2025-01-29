@@ -74,7 +74,7 @@ gameStartBtn.addEventListener("click", () => {
 // Fetch function
 const fetchurl = function () {
     return __awaiter(this, void 0, void 0, function* () {
-        const url = "./animal.json";
+        const url = "animal.json";
         try {
             const response = yield fetch(url);
             if (!response.ok) {
@@ -112,7 +112,7 @@ const createBlocks = (animalData) => {
         memoryBlocksContainer.innerHTML += `
     <div class="game-block" data-animals="${animal}">
         <div class="face front"></div>
-        <div class="face back"><img src="../Images/${animal}.png" alt="" /></div>
+        <div class="face back"><img src=".Images/${animal}.png" alt="" /></div>
       </div>`;
     });
 };
@@ -166,7 +166,7 @@ let darkMode = localStorage.getItem("darkMode") === "true";
 // Function to toggle light and dark mode
 const setLightDark = function () {
     if (darkMode) {
-        lightDarkModeIcon.src = "./dark-light/moon.png";
+        lightDarkModeIcon.src = "dark-light/moon.png";
         document.body.classList.add("dark-theme");
     }
     else {
