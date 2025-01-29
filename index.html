@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animals Memory Blocks Game</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="game-start-container">
+      <div class="game-start">
+        <label for="different-shapes-number">different shapes number</label>
+        <input
+          type="number"
+          id="different-shapes-number"
+          min="4"
+          max="10"
+          value="6"
+          step="2"
+        />
+        <label for="time-limit">time limit:</label>
+        <input
+          type="number"
+          id="time-limit"
+          min="10"
+          max="240"
+          value="60"
+          step="5"
+        />
+        <p class="previous-game-wrongs">Last Game Wrongs: <span></span></p>
+        <button class="start-game-btn">Start Game</button>
+      </div>
+    </div>
+    <div class="game-main-container">
+      <div class="info-container">
+        <div class="time">time: <span></span></div>
+        <div class="tries">wrongs: <span>0</span></div>
+        <div class="dark-light-toggle">
+          <img src="./dark-light/moon.png" alt="" />
+        </div>
+      </div>
+      <div class="memory-blocks-container"></div>
+    </div>
+    <audio src="./audio/success.mp3" class="success"></audio>
+    <audio src="./audio/fail.mp3" class="fail"></audio>
+    <script src="./dist/Main.js"></script>
+  </body>
+</html>

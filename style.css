@@ -1,0 +1,210 @@
+:root {
+  --main-bg-color: #ffffff;
+  --main-text-color: #000000;
+  --heading-bg-color: #f7dc6f;
+  --secondary-color: #a4a4a4;
+  --front-img-color: #e0e0e0;
+  --back-img-color: #d6eaf8;
+  --game-start-bg-color: #e57373;
+  --start-container-bg-color: rgba(3, 169, 244, 0.4);
+}
+
+.dark-theme {
+  --main-bg-color: #121212;
+  --main-text-color: #d3d3d3;
+  --heading-bg-color: #3e4a61;
+  --secondary-color: #2fb65c;
+  --front-img-color: #1a1a1a;
+  --back-img-color: #37474f;
+  --game-start-bg-color: #2a6f97;
+  --start-container-bg-color: rgba(2, 119, 189, 0.8);
+}
+
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  position: relative;
+  z-index: 1;
+  background-color: var(--main-bg-color);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game-start-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: var(--start-contianer-bg-color);
+}
+
+.game-start-container .game-start {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--game-start-bg-color);
+  padding: 15px 25px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.game-start-container .game-start h1 {
+  font-size: 40px;
+  color: var(--main-text-color);
+  padding: 20px;
+}
+.game-start-container .game-start button {
+  font-size: 24px;
+  padding: 10px 20px;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+.game-start-container #different-shapes-number {
+  font-size: 18px;
+  padding: 5px 10px;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+.game-start-container label {
+  font-size: 20px;
+  color: var(--main-text-color);
+  padding: 10px 20px;
+  display: block;
+}
+#time-limit {
+  font-size: 18px;
+  padding: 5px 10px;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+.previous-game-wrongs {
+  font-size: 20px;
+  color: var(--main-text-color);
+  padding: 10px 20px;
+  display: block;
+}
+.previous-game-wrongs span {
+  font-size: 18px;
+  padding: 5px 10px;
+}
+.game-main-container {
+  color: var(--main-text-color);
+  display: block;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: 100%;
+  background-color: var(--main-bg-color);
+}
+.dark-light-toggle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.dark-light-toggle img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.info-container {
+  position: relative;
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto 0;
+  overflow: hidden;
+  padding: 20px;
+  font-size: 24px;
+  background-color: var(--heading-bg-color);
+  border: 2px solid var(--secondary-color);
+}
+.info-container .time {
+  float: left;
+  width: 50%;
+}
+.info-container .tries {
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+.memory-blocks-container {
+  display: flex;
+  width: 90%;
+  max-width: 1100px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+.memory-blocks-container .game-block {
+  height: 200px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  flex: 1 0 200px;
+  justify-content: center;
+  margin: 0 10px 20px;
+}
+.memory-blocks-container .game-block .front {
+  background-color: var(--front-img-color);
+  line-height: 200px;
+}
+
+.memory-blocks-container .game-block .front::after {
+  content: "~(￣▽￣)~*";
+  color: var(--secondary-text-color);
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.dark-theme .memory-blocks-container .game-block .front::after {
+  content: "(^人^)";
+}
+.memory-blocks-container .game-block .back {
+  background-color: var(--back-img-color);
+  transform: rotateY(180deg);
+}
+.memory-blocks-container .game-block .back img {
+  width: 140px;
+  height: 140px;
+  margin-top: 30px;
+}
+.memory-blocks-container .game-block .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  border: 5px solid var(--secondary-color);
+}
+
+.memory-blocks-container .flipped,
+.memory-blocks-container .checked {
+  pointer-events: none;
+}
+.memory-blocks-container .flipped .back {
+  --webkit-transform: rotateY(0);
+  --moz-transform: rotateY(0);
+  transform: rotateY(0);
+}
+.memory-blocks-container .checked .back {
+  --webkit-transform: rotateY(0);
+  --moz-transform: rotateY(0);
+  transform: rotateY(0);
+}
