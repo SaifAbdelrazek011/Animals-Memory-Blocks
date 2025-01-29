@@ -112,7 +112,7 @@ const createBlocks = (animalData) => {
         memoryBlocksContainer.innerHTML += `
     <div class="game-block" data-animals="${animal}">
         <div class="face front"></div>
-        <div class="face back"><img src=".Images/${animal}.png" alt="" /></div>
+        <div class="face back"><img src="Images/${animal}.png" alt="" /></div>
       </div>`;
     });
 };
@@ -170,7 +170,7 @@ const setLightDark = function () {
         document.body.classList.add("dark-theme");
     }
     else {
-        lightDarkModeIcon.src = "../dark-light/sun.png";
+        lightDarkModeIcon.src = "dark-light/sun.png";
         document.body.classList.remove("dark-theme");
     }
 };
