@@ -73,5 +73,3 @@ MIT Licensed - See [LICENSE](LICENSE) for details
 ## 🙏 Acknowledgements
 
 - Original concept inspiration from Elzero
-- Browser Storage API for state persistence
-```
