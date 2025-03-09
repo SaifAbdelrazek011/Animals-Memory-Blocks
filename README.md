@@ -58,17 +58,6 @@ npm run dev
   - CSS Grid/Flexbox
   - HTML5
 
-- **Data Management**:
-  ```typescript
-  interface GameConfig {
-    animals: number; // 4-10
-    timeLimit: number; // 10-240 seconds
-    previousTime?: number;
-  }
-  
-  // Local storage implementation
-  localStorage.setItem('memoryConfig', JSON.stringify(config));
-  ```
 
 ## 🤝 Contributing
 
